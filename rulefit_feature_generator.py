@@ -35,7 +35,8 @@ def create_tree_rule_filters(X_values, tree):
         # it is the same as an input rule.
 
         # Do not add path for root node
-        if parent_index != 0:
+        #if parent_index != 0:
+        if len(rule_path) > 2:
             # Subset on columns that the rule path defines
             X_rule_values = X_values.iloc[:, tree.feature[rule_path]]
             thresholds = tree.threshold[rule_path]
